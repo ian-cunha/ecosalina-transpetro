@@ -1,0 +1,15 @@
+
+node_modules
+.DS_Store # (Para usuários macOS)
+*.log
+npm-debug.log*
+
+# Next.js specific
+.next/
+out/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.development.local
+.env.production.local
