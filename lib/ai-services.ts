@@ -1,5 +1,5 @@
 /**
- * Serviços de IA para o Sistema SIMP-Bio
+ * Serviços de IA para o Sistema EcoSalina
  * Inclui análise de imagens, chatbot e geração de relatórios
  */
 
@@ -30,7 +30,7 @@ export async function analyzeUnderwaterImage(imageUrl: string) {
 
 export async function generateChatResponse(messages: { role: "user" | "assistant"; content: string }[], context?: any) {
   try {
-    const systemPrompt = `Você é o assistente IA do SIMP-Bio, sistema da Transpetro para monitoramento de bioincrustação.
+    const systemPrompt = `Você é o assistente IA do EcoSalina, sistema da Transpetro para monitoramento de bioincrustação.
     
 Você tem acesso a:
 - Dados em tempo real de ${context?.totalVessels || 4} embarcações
@@ -60,7 +60,7 @@ function generateFallbackResponse(userMessage: string, context?: any): string {
   }
 
   if (lowerMsg.includes("combustível") || lowerMsg.includes("economia")) {
-    return `No último mês, o sistema SIMP-Bio gerou uma economia de ${context?.fuelSaved?.toLocaleString("pt-BR") || "47.800"} litros de combustível através da otimização das limpezas de casco.`
+    return `No último mês, o sistema EcoSalina gerou uma economia de ${context?.fuelSaved?.toLocaleString("pt-BR") || "47.800"} litros de combustível através da otimização das limpezas de casco.`
   }
 
   if (lowerMsg.includes("limpe") || lowerMsg.includes("clean") || lowerMsg.includes("manutenção")) {
@@ -68,10 +68,10 @@ function generateFallbackResponse(userMessage: string, context?: any): string {
   }
 
   if (lowerMsg.includes("gee") || lowerMsg.includes("emiss") || lowerMsg.includes("co2")) {
-    return `As otimizações do SIMP-Bio resultaram em redução de ${context?.ghgReduced?.toFixed(1) || "125.2"} toneladas de CO₂ no último mês, contribuindo para as metas ambientais da Transpetro.`
+    return `As otimizações do EcoSalina resultaram em redução de ${context?.ghgReduced?.toFixed(1) || "125.2"} toneladas de CO₂ no último mês, contribuindo para as metas ambientais da Transpetro.`
   }
 
-  return `Entendo sua questão sobre ${lowerMsg.split(" ")[0]}. O SIMP-Bio monitora continuamente ${context?.totalVessels || 4} embarcações, analisando arrasto hidrodinâmico, consumo de combustível e condições ambientais para prever o crescimento de bioincrustação com 87.5% de acurácia.`
+  return `Entendo sua questão sobre ${lowerMsg.split(" ")[0]}. O EcoSalina monitora continuamente ${context?.totalVessels || 4} embarcações, analisando arrasto hidrodinâmico, consumo de combustível e condições ambientais para prever o crescimento de bioincrustação com 87.5% de acurácia.`
 }
 
 export function optimizeRouteForBiofouling(currentRoute: any, weatherData: any, historicalData: any) {

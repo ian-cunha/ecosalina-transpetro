@@ -120,7 +120,7 @@ export class BiofoulingAnalytics {
   }
 
   /**
-   * Calcula ROI do sistema SIMP-Bio
+   * Calcula ROI do sistema EcoSalina
    */
   static calculateROI(
     implementationCost: number,

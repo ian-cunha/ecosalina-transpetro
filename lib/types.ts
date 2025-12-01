@@ -1,4 +1,4 @@
-// Tipos e interfaces para o Sistema SIMP-Bio
+// Tipos e interfaces para o Sistema EcoSalina
 
 export interface Vessel {
   id: string
